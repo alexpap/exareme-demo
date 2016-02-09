@@ -1,0 +1,17 @@
+master:
+  build: .
+  container_name: examaster
+  hostname: examaster
+  working_dir: /root/exareme/
+  entrypoint: /bin/bash -c "./bin/exareme-admin.sh --start --local;./bin/exareme-admin.sh --console"
+  links:
+    - externaldb
+
+externaldb:
+  image: postgres
+  container_name: externaldb
+  hostname: externaldb
+  environment:
+     - POSTGRES_DB=dockdb
+     - POSTGRES_USER=docker
+     - POSTGRES_PASSWORD=docker
