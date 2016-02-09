@@ -4,6 +4,8 @@
     - [docker-compose] (https://docs.docker.com/compose/install/)
 * Running the Demo
 ```
+$ git clone https://github.com/alexpap/exareme-demo.git 
+$ cd exareme-demo
 $ docker-compose build master                              ## the first time may take some time!
 $ docker-compose run master                               
 mterm> exaquery db:/tmp/demodb  
